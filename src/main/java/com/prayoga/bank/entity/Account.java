@@ -19,7 +19,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Account extends BaseEntity{
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "user_id")
     private User user;
     private BigDecimal balance;

@@ -21,7 +21,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 public abstract class BaseEntity {
   @Id
   @Column(name = "id", nullable = false)
-//  @UuidGenerator
   private String id;
 
   @Column(name = "created_at", nullable = false, updatable = false)
@@ -43,20 +42,4 @@ public abstract class BaseEntity {
   @Column(name = "version")
   @Version
   private Long version;
-
-
-
-  @Override
-  public final int hashCode() {
-    return this instanceof HibernateProxy hibernateProxy
-        ? hibernateProxy.getHibernateLazyInitializer().getPersistentClass().hashCode()
-        : getClass().hashCode();
-  }
-
-//  @Override
-//  public String toString() {
-//    return "id='" + id + '\'' + ", createdAt=" + createdAt.toInstant().toEpochMilli()
-//        + ", createdBy='" + createdBy + '\'' + ", updatedAt=" + updatedAt.toInstant()
-//        .toEpochMilli() + ", updatedBy='" + updatedBy + '\'' ;
-//  }
 }

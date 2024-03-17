@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping({"/bank"})
+@RequestMapping({"/api/v1"})
 @RequiredArgsConstructor
 public class BankController {
   private final UserService userService;
@@ -26,13 +26,8 @@ public class BankController {
     return ResponseEntity.ok(accountService.getAccounts());
   }
 
-  @GetMapping(value = "/transfer-race-condition", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(value = "/transfer", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<?> transferBalanceRaceCondition() {
-    return ResponseEntity.ok(accountService.transferBalanceRaceCondition());
-  }
-
-  @GetMapping(value = "/transfer-sequential", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<?> transferBalanceSequential() {
-    return ResponseEntity.ok(accountService.transferBalanceSequential());
+    return ResponseEntity.ok(accountService.transferBalance());
   }
 }

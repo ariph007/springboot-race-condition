@@ -7,5 +7,5 @@ GET http://localhost:8080/bank/accounts
 ### Transfer Race Condition
 GET http://localhost:8080/bank/transfer-race-condition
 
-### Transfer Race Condition
+### Transfer Sequential
 GET http://localhost:8080/bank/transfer-sequential

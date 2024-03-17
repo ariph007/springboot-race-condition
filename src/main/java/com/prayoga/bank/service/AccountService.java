@@ -7,6 +7,5 @@ import java.util.List;
 public interface AccountService {
   List<GetAccountResponse> getAccounts();
 
-  List<GetAccountBalance> transferBalanceRaceCondition();
-  List<GetAccountBalance> transferBalanceSequential();
+  List<GetAccountBalance> transferBalance();
 }
